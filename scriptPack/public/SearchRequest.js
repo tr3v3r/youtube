@@ -17,9 +17,9 @@ export default class SearchRequest {
     setRequestUrl(request) {
         if (request) {
             this.searchRequest = request;
-            this.url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchRequest}&key=AIzaSyC3SjFs8zSanrWcZ-jnO0Es17V5yFKbA-A&maxResults=15&type=video`;
+            this.url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchRequest}&key=AIzaSyDcDWuOyuRt3sFEPuYK-Shf2Mxq5JyuaNQ&maxResults=15&type=video`;
         } else if (this.token) {
-            this.url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchRequest}&key=AIzaSyC3SjFs8zSanrWcZ-jnO0Es17V5yFKbA-A&maxResults=15&type=video&pageToken=${this.token}`;
+            this.url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchRequest}&key=AIzaSyDcDWuOyuRt3sFEPuYK-Shf2Mxq5JyuaNQ&maxResults=15&type=video&pageToken=${this.token}`;
         }
     }
 
@@ -35,7 +35,7 @@ export default class SearchRequest {
     }
 
     requestStatisticsForVideos(arrayOfId) {
-        return fetch(`https://www.googleapis.com/youtube/v3/videos?id=${arrayOfId.join()}&key=AIzaSyC3SjFs8zSanrWcZ-jnO0Es17V5yFKbA-A&part=snippet,statistics`)
+        return fetch(`https://www.googleapis.com/youtube/v3/videos?id=${arrayOfId.join()}&key=AIzaSyDcDWuOyuRt3sFEPuYK-Shf2Mxq5JyuaNQ&part=snippet,statistics`)
                                  .then(response => response.json())
                                  .then(json => json.items);
     }
